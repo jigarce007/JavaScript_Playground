@@ -1,3 +1,9 @@
 let js = "welcome";
 console.log('we welcome you on Learning!!!')
-if(js == "welcome") alert('you are welcome to Javascriot')
+let  firstName = "Jigar"
+let lastName = "Makwana"
+
+console.log("Welcome ",firstName) 
+
+
+
