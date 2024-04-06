@@ -2,6 +2,7 @@
 // THREE WAYS let,var and const
 
 //let is commonand mutable.. can change the value of it when it's required in future.
+console.log('======================LET VAR & CONST========================')
 let fName
 fName = 'Jigar'
 
