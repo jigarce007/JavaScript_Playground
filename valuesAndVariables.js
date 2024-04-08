@@ -1,3 +1,4 @@
+console.log('======================VALUES & VARIABLES========================')
 let js = "welcome";
 console.log('we welcome you on Learning!!!')
 let  firstName = "Jigar"
@@ -17,3 +18,4 @@ let population = 100
 console.log(country)
 console.log(continent)
 console.log(population)
+
