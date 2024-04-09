@@ -27,7 +27,7 @@ const bill = 275;
 /* Write your code below. Good luck! 🙂 */
 let tip;
 let total;
-tip = (bill>=50 && bill<300) ?    bill *15/100 :  bill *20/100
+tip = (bill>=50 && bill<=300) ?    bill *15/100 :  bill *20/100
 
 total = bill + tip
 
