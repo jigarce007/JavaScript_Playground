@@ -25,6 +25,7 @@ console.log(`Fruitcutter cut fruit in ${cuts}`)
 //=========ARROW FUNCTIONS
  const smoothie = mango => mango*2 
  console.log( `we got ${smoothie(2)} glass of smoothies yay!`)
+ 
 
  
 

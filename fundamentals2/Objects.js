@@ -39,3 +39,4 @@ const byear = prompt(`What is your birthyear`);
 const calcAges = byear =>  2024 - byear;
 
 console.log(calcAges(byear))
+
