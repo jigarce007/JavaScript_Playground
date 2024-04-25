@@ -1,29 +1,16 @@
-//spread operator.
-//sprad operator is used to expand the array
-const ary = [5,6,7,8]
+//For of loop : is used to iterate the array without index..
 
-const newAry = [1,2, ...ary]
-console.log(`${newAry}`);
+const states = ["Jammu","Kashmir","Himachal","Gujarat","Maharashtra","Assam","Tamilnadu","Telangana","Andhrapradesh","Sikkim","Manipur","Delhi","Arunachal"]
 
-//case 1 - shalow copy of an array
-const mainMenu = ['Pizza','pasta','pasta lazania']
-const starter = ['garlic bread','salted fish','masala kaju','giger soup']
-const restaurant = [starter,mainMenu]
+//Forof loop to iterate the above array
+ for (const state of states.entries()) {
+    const [num,name] = state
+    console.log(num+1,name);
 
-//make a shalow copy
-const shalowCopyAry = ['chinese manchurian','noodles', ...restaurant]
-console.log(`============= shalow copy ======== > ${restaurant}`);
+ }
 
-
-//merge two arrays,Join two arrays
-
-const mergedArray = [...starter,...mainMenu];
-console.log(`=========mergerd array======= > ${mergedArray}`); 
-
-//Assignements
-//Each book object has the author property, which stores an array of strings (author names) if there are multiple authors, 
-//or a single string (author name) if there is just one author.
-const books = [
+//  Assisgments
+const buks = [
     {
       title: 'Algorithms',
       author: ['Robert Sedgewick', 'Kevin Wayne'],
@@ -206,17 +193,82 @@ const books = [
       highlighted: true
     }
   ];
+//  case 1 : Use the for-of loop to loop over the books array and sum the pages of all books. 
+//  Use the pageSum variable below, and the pages property of the book objects.
+let pageSum = 0;
+for (const book of buks) {
+    pageSum+=book.pages
+}
+console.log(`====case 1====`,pageSum);
+//  case 2 : Below is the allAuthors variable which stores an empty array. 
+//  Use the for-of loop to fill allAuthors with the authors of each book from the books array.
+//  Remember that each book object has the author property,
+//   which can be a string (if there is only a single author) or 
+//   an array (if there are multiple authors). You may need to use the typeof operator. You can also use multiple loops if needed. 
+//   The allAuthors array should have just one level (no nested arrays).
+ 
+ const allAuthors = [];
+ for (const book of buks) {
+    if(typeof(book.author) === 'string'){
+        allAuthors.push(book.author)
+    }else{
+        for (const authr of book.author) {
+            allAuthors.push(authr)
+        }
+    }
 
-// case 1 :Declare an array called bookAuthors, and fill it with authors of the first two books from the books array.
- //The bookAuthors array should have just one level (no nested arrays).
- const bookAuthors = [...books[0].author, ...books[1].author];
- console.log(bookAuthors);
+ }
+ console.log(` case 2 ====`,allAuthors);
 
-
- //case 2 : Write a function called spellWord that accepts a single string as an argument. 
- //This function should log to the console each letter of the argument separated by a space.
-function spellWord(arg){
-    console.log(...arg);
+//  case 3: Use the for-of loop together with Array's entries() method to log each author from allAuthors to 
+//  the console together with its index. Make the index start from 1, instead of 0.
+ 
+console.log("======case 3======")
+for (const [num,name] of allAuthors.entries()) {
+    console.log(num+1,name)
 }
 
-spellWord("JAVASCRIPT")
+
+//Optional Chaining (?.) Assignments
+// case 1 - Write a function called getFirstKeyword that takes the book object as an argument. 
+//This function should return the first keyword from the book's keywords property (array) or 
+//undefined (if the keywords property doesn't exist).
+//It shouldn't throw an error. Use optional chaining for that.
+function getFirstKeyword(obj) {
+    
+    return obj.keywords?.[3];
+}
+
+console.log('======Optional chaining===',getFirstKeyword(buks[1]));
+
+//Looping Objects
+/*
+Below is the entries variable that stores an empty array. 
+Use the for-of loop together with the Object.keys() method to loop over the thirdParty.goodreads property (array) of the first book object from the books array. 
+For each key, push a new array that contains that key to the entries array.
+*/
+const entries = [];
+for (const book of Object.keys(buks[0].thirdParty.goodreads)) {
+   // const[[keys]] = book.thirdParty.goodreads
+    entries.push(book)
+    
+}
+//console.log(entries);
+
+
+//case 2
+const entrys = [];
+console.log(` =========case 2==========`);
+const goodreadsValues = Object.values(buks[0].thirdParty.goodreads);
+
+for (const [index, value] of goodreadsValues.entries()) {
+    entrys.push([index+1, value]);
+}
+
+console.log(entrys);
+
+
+//case 3 
+
+const entries2 = Object.entries(buks[0].thirdParty.goodreads)
+console.log(`=======case 3==`,entries2);
