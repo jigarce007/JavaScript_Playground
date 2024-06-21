@@ -18,4 +18,6 @@ console.log(lName)
 console.log(birthyear)
 
 
+const father = 'ArvindBhai'
+console.log(`${father}`);
 
